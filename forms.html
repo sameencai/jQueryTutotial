@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form validation</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+                integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+                crossorigin="anonymous"></script>
+        <script>
+            function checkForm(form){
+                var errors=[];
+                var re = /^[\w ]+$/; // validation expression to match only alphanumeric characters and spaces
+                // 验证输入值的合法性
+                if(form.inputfield.value == ""){
+                        errors.push("Input is empty!");
+                }
+                 //validation fails if the input doesn't match our regular expression
+               else if(!re.test(form.inputfield.value)){
+                    errors.push("Input contains invalid characters!");
+                }
+            // 验证输入值的合法性
+            //输入值是否相同
+            if(form.password1.value ==""){
+                errors.push("Password is empty!");
+            }
+            else if(form.password1.value != form.password2.value){
+                //passwords don't match
+                errors.push("Passwords don't match!");
+            }
+            if (errors.length > 0){
+                var msg = "ERRORS:\n\n";
+                for (var i=0; i<errors.length;i++){
+                    msg+=errors[i]+"\n";
+                }
+                alert(msg);
+                return false;
+            }
+            //bingo
+            return true;
+        }
+        </script>
+    </head>
+    <body>
+        <form method="post" action="form-handler.html" onsubmit="return checkForm(this)">
+        <p>Input: <input type="text" size="32" name="inputfield"></p>
+        <p>Enter Password: <input type="text" size="32" name="password1"></p>
+        <p>Repeat Password<input type="text" size="32" name="password2"></p>
+        <input type="submit">      
+    </form>
+    </body>
+    </html>

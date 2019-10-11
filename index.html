@@ -14,16 +14,130 @@
     <body>
        <h1>jQuery Tutorial</h1>
        <p>By Sameen</p>
+       <input id="date" type="text" size="10">
+       <script>
+       $("#date").datepicker()
+       </script>
+       <!--
+       <img id= "img1"src="movie/p468734422.jpg">
+       <style>
+                #drop{
+                        width: 400px;
+                        height: 400px;
+                        float: right;
+                        background-color: aquamarine;
+                }
+        </style>
+        <script>
+        $(function(){
+                        $("#img1").draggable();
+                        $("#drop").droppable();
+                });
+        </script>
+        <div id="drop">
+                <p>My Home</p>
+        </div>
+       <style>
+               #drag{
+                       width: 150px;
+                       height: 60x;
+                       background-color: blueviolet;
+               }
+       </style>
+       <script>
+       $(function(){
+               $("#drag").draggable();
+       })
+       </script>
+       <div id="drag">
+               Drag me around
+       </div>
+       
+       <button>Slide</button>
+      <div id="div1" style="width: 90px;height: 60px;background-color: pink;display: none">
+        </div>
+        <script>
+                $("document").ready(function(){
+                        $("button").on("click",function(){
+                        $("#div1").slideDown("slow");
+                });
+        });
+        </script>
+    
+        <script>
+        $(document).ready(function(){
+                    $("button").click(function(){
+                            $("#one").fadeIn();
+                            $("#two").fadeIn("slow");
+                            $("#three").fadeIn(3000);
+                    });
+            });
+        </script>
+        <button>Namaste!</button>
+        <div class="fade">
+                <div id="one" style="width: 2200;height: 60px;display:none;background-color: orange;"></div><br>
+                <div id="two" style="width: 2200;height: 60px;display:none;background-color: white;"></div><br>
+                <div id="three" style="width: 2200;height: 60px;display:none;background-color: green;"></div><br>
+        </div>
+       <button class="button" id="hide">Hide</button>
+       <button class="button" id="show">Show</button>
+       <div class = "movies">
+                <img src="movie/p468734422.jpg">
+        </div>
+        <script>
+                $(document).ready(function(){
+                            $("#hide").click(function(){
+                                    $("img").hide();
+                            });
+                            $("#show").click(function(){
+                                    $("img").show();
+                            });
+                    });
+                </script>
+        <p>Start typing...</p>
+       <input id = "press" type="text" size="10">
+               <script>
+       $(document).ready(function(){
+                   $("input").on("keypress",function(){
+                           $("p:last").hide();
+                   });
+           });
+       </script>
+       -->
+
+       <!--
        <div class = "movies">
             <img src="movie/p468734422.jpg">
             <img src="movie/p475749975.jpg">
             <img src="movie/p2351206461.jpg">
        </div>
        <script>
-           $(document).ready(function(){
-               
+       $(document).ready(function(){
+                   $("img").click(function(){
+                           $(this).hide();
+                   });
+           });
+       </script>
+       -->
+       <!--
+       <style>
+       .styleclass{
+               border:5px solid green
+       }
 
-           }
+       </style>
+       <button>Try addClass()</button>
+       -->
+        <!--<script>
+           $(document).ready(function(){
+                   $("button").click(function(){
+                           alert("value: "+$("#sometext").val());
+                   });
+           });
+
             </script>
+            <input type="text" id="sometext" value="">
+            <button>submit</button>
+        -->
     </body>
     </html>
